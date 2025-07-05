@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Digital Counter Pro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Digital Counter Pro</h1>
+
+        <div class="settings-panel">
+            <div class="input-group">
+                <label for="maxCountInput">Count per Session:</label>
+                <input type="number" id="maxCountInput" value="100" min="1">
+            </div>
+            <div class="input-group">
+                <label for="goalSessionInput">Session Goal:</label>
+                <input type="number" id="goalSessionInput" value="10" min="1">
+            </div>
+            <button class="primary-btn" onclick="applySettings()">Apply Settings</button>
+        </div>
+
+        <div class="stats-display">
+            <div class="stat-item">
+                <div class="stat-label">Current Count</div>
+                <div class="stat-value">
+                    <span id="currentCounter">0</span> / <span id="maxCountDisplay">100</span>
+                </div>
+                <div class="progress-indicator">
+                    <div class="progress-bar" id="progressBar" style="width: 0%"></div>
+                </div>
+            </div>
+            
+            <div class="stat-item">
+                <div class="stat-label">Sessions Completed</div>
+                <div class="stat-value" id="sessionCounter">0</div>
+            </div>
+        </div>
+
+        <div id="statusMessage" class="message encouraging">
+            🎯 Ready to start counting! Let's achieve your goal together.
+        </div>
+
+        <div class="button-group">
+            <button class="count-btn" onclick="incrementCount()">Count +1</button>
+            <button class="secondary-btn" onclick="resetCounter()">Reset All</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
